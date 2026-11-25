@@ -1,0 +1,34 @@
+{
+  "$schema_version": 1,
+  "name": "srs-ag05-feature-matrix",
+  "version": "2.0.0",
+  "node_id": "AG-05",
+  "kind": "agent",
+  "summary": "[Bước tuỳ chọn] Agent Node AG-05 (Bước B8 SOP viết SRS): lập ma trận tính năng × sản phẩm và danh sách đề xuất bổ sung MKT có căn cứ, chấm giá trị/công sức/rủi ro phình phạm vi (điểm nguyên), gợi ý MoSCoW, chờ khách xác nhận qua demo. Code Node DET-08b tính điểm & áp trần.",
+  "repository": "https://github.com/HaNguyen1409/srs-ag05-feature-matrix",
+  "license": "MIT",
+  "interface": {
+    "contract": "SKILL.md — đầu vào/đầu ra là tài liệu Markdown/JSON mô tả trong skill; không gọi trực tiếp skill khác",
+    "output_artifact": "none (MKT proposals + feature matrix)",
+    "sop_steps": [
+      {
+        "step": "8",
+        "title": "(Tuỳ chọn) Ma trận tính năng & đề xuất bổ sung",
+        "type": "Agent",
+        "receives_from": "B5, B6, B7, (B5a)",
+        "sends_to": "B8a, B9"
+      }
+    ]
+  },
+  "upstream": {
+    "srs-ag03-gap-analysis": "^2.2.1",
+    "srs-ag04-competitor-research": "^2.0.0",
+    "srs-agmt-functional-matrix": "^1.1.0"
+  },
+  "downstream": [
+    "srs-agtq-project-overview",
+    "srs-ag06-business-model"
+  ],
+  "orchestrates": {},
+  "runtime": null
+}
